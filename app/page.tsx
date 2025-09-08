@@ -12,7 +12,7 @@ export default function HomePage() {
           <div className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             <p className="mb-4 font-medium">
               <span className="text-gray-800">Developed by:</span><br />
-              Dan Stevens, Senior Psychologist<br />
+              Dan Stevens, Clinical Psychologist<br />
               Alisha Jones, Registered Mental Health Nurse
             </p>
           </div>
