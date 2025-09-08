@@ -53,20 +53,52 @@ export default function WorkbookOverview() {
           ))}
         </div>
         
-        <div className="mt-12 lg:mt-16 p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl">
-          <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+        <div className="mt-12 lg:mt-16 space-y-8">
+          {/* How to Use This Workbook */}
+          <div className="p-6 sm:p-8 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">How to Use This Workbook</h3>
+                <div className="space-y-3 text-gray-700 leading-relaxed">
+                  <p>
+                    This workbook is designed to be <strong>co-navigated with a mental health professional</strong>. 
+                    Each section builds on the previous one, so we recommend working through them in order.
+                  </p>
+                  <p>
+                    You should initially be guided through the contents by an <strong>i-Rock Practitioner across 3 safe and confidential sessions</strong>. 
+                    After these sessions, you can use the workbook as a tool to keep coming back to in order to practice 
+                    skills, refresh your knowledge, or reflect on your journey.
+                  </p>
+                  <p>
+                    Feel free to <strong>share it with loved ones or trusted Adults in your life</strong>. Take your time and 
+                    feel free to revisit sections as needed.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">How to Use This Workbook</h3>
-              <p className="text-gray-700 leading-relaxed">
-                This workbook is designed to be co-navigated with a mental health professional. 
-                Each section builds on the previous one, so we recommend working through them in order. 
-                Take your time and feel free to revisit sections as needed.
-              </p>
+          </div>
+
+          {/* Important Note */}
+          <div className="p-6 sm:p-8 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.664-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Important Note</h3>
+                <p className="text-amber-800 leading-relaxed">
+                  Some pages may feel more relevant to you than others. You can complete activities in session 
+                  with your i-Rock Practitioner or in your own time. Use them in a way that feels right for you. 
+                  <strong> There is no right or wrong way to reflect on your experiences.</strong>
+                </p>
+              </div>
             </div>
           </div>
         </div>
