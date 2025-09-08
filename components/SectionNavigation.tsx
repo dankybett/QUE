@@ -26,56 +26,68 @@ export default function SectionNavigation() {
   const nextSection = currentIndex < sections.length - 1 ? sections[currentIndex + 1] : null
 
   return (
-    <div className="border-t border-gray-200 pt-8 mt-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="bg-white rounded-xl shadow-sm p-6 mt-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
         <div className="flex-1">
           {prevSection && (
             <Link 
               href={prevSection.path}
-              className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="inline-flex items-center text-sm sm:text-base text-gray-600 hover:text-blue-600 transition-colors group"
             >
-              ← Previous: {prevSection.title}
+              <svg className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              <span className="truncate">
+                <span className="hidden sm:inline">Previous: </span>
+                {prevSection.title}
+              </span>
             </Link>
           )}
         </div>
-        <div className="flex-1 text-right">
+        <div className="flex-1 text-left sm:text-right">
           {nextSection && (
             <Link 
               href={nextSection.path}
-              className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              className="inline-flex items-center text-sm sm:text-base text-gray-600 hover:text-blue-600 transition-colors group"
             >
-              Next: {nextSection.title} →
+              <span className="truncate">
+                <span className="hidden sm:inline">Next: </span>
+                {nextSection.title}
+              </span>
+              <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           )}
         </div>
       </div>
       
-      <div className="text-center">
-        <div className="text-sm text-gray-500 mb-2">
+      <div className="text-center py-4 border-t border-gray-100">
+        <div className="text-sm text-gray-500 mb-3">
           Section {currentSection?.id || 1} of {sections.length}
         </div>
-        <div className="flex justify-center space-x-2">
+        <div className="flex justify-center space-x-3 mb-4">
           {sections.map((section) => (
             <Link
               key={section.id}
               href={section.path}
-              className={`w-3 h-3 rounded-full transition-colors ${
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-200 ${
                 section.path === pathname 
-                  ? 'bg-blue-600' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-blue-600 scale-125' 
+                  : 'bg-gray-300 hover:bg-blue-400 hover:scale-110'
               }`}
               title={section.title}
             />
           ))}
         </div>
-      </div>
-      
-      <div className="mt-6 text-center">
         <Link 
           href="/workbook"
-          className="text-sm text-blue-600 hover:text-blue-800 transition-colors"
+          className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 transition-colors group"
         >
-          ← Back to Overview
+          <svg className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Overview
         </Link>
       </div>
     </div>
